@@ -1,3 +1,5 @@
+module("Library");
+
 test("Tests for NumFuzz.fuzzy()", function() {
   expect(11);
 
@@ -25,4 +27,16 @@ test("Tests for NumFuzz.fuzzy() with invalid data", function() {
   strictEqual(NumFuzz.fuzzy(""), "NaN", "NumFuzz.fuzzy('') returns 'NaN'");
   strictEqual(NumFuzz.fuzzy(true), "NaN", "NumFuzz.fuzzy(true) returns 'NaN'");
   strictEqual(NumFuzz.fuzzy(false), "NaN", "NumFuzz.fuzzy(fals) returns 'NaN'");
+});
+
+module("jQuery plugin", {setup: function() {
+  $('#qunit-fixture').append('<p><span class="number">1100</span> Followers</p>');
+}});
+
+test("Test for $.numFuzz()", function() {
+  $('#qunit-fixture .number').numFuzz();
+
+  expect(2);
+  strictEqual($('#qunit-fixture .number').text(), "1.1k", "Text should be equals to '1.1k'");
+  strictEqual($('#qunit-fixture .number').attr('title'), parseInt(1100, 10).toLocaleString(), "Title should be equals to number.toLocalizedString()");
 });
