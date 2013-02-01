@@ -42,7 +42,7 @@
     this.each(function (i, elem) {
       var num = parseInt($(elem).text(), 10);
       var fuzzy = NumFuzz.fuzzy(num);
-      $(elem).attr('title', num).text(fuzzy).data('numfuzz-val', num);
+      $(elem).attr('title', num.toLocaleString()).text(fuzzy).data('numfuzz-val', num);
     });
   };
 })(jQuery);
