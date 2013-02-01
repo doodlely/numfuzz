@@ -18,7 +18,7 @@ test("Tests for NumFuzz.fuzzy()", function() {
   strictEqual(NumFuzz.fuzzy(1100000), "1.1M", "NumFuzz.fuzzy(1100000) returns '1.1M'");
   
   // Negative
-  strictEqual(NumFuzz.fuzzy(-1000), "-1k", "NumFuzz.fuzzy(-1000) returns -1k");
+  strictEqual(NumFuzz.fuzzy(-1000), "-1k", "NumFuzz.fuzzy(-1000) returns '-1k'");
 });
 
 test("Tests for NumFuzz.fuzzy() with invalid data", function() {
@@ -26,7 +26,7 @@ test("Tests for NumFuzz.fuzzy() with invalid data", function() {
   strictEqual(NumFuzz.fuzzy("1"), "1", "NumFuzz.fuzzy('1') returns '1'");
   strictEqual(NumFuzz.fuzzy(""), "NaN", "NumFuzz.fuzzy('') returns 'NaN'");
   strictEqual(NumFuzz.fuzzy(true), "NaN", "NumFuzz.fuzzy(true) returns 'NaN'");
-  strictEqual(NumFuzz.fuzzy(false), "NaN", "NumFuzz.fuzzy(fals) returns 'NaN'");
+  strictEqual(NumFuzz.fuzzy(false), "NaN", "NumFuzz.fuzzy(false) returns 'NaN'");
 });
 
 module("jQuery plugin", {setup: function() {
@@ -38,5 +38,5 @@ test("Test for $.numFuzz()", function() {
 
   expect(2);
   strictEqual($('#qunit-fixture .number').text(), "1.1k", "Text should be equals to '1.1k'");
-  strictEqual($('#qunit-fixture .number').attr('title'), parseInt(1100, 10).toLocaleString(), "Title should be equals to number.toLocalizedString()");
+  strictEqual($('#qunit-fixture .number').attr('title'), parseInt(1100, 10).toLocaleString(), "Title should be equals to number.toLocaleString()");
 });
