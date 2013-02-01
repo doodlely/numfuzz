@@ -1,3 +1,5 @@
+module("Library");
+
 test("Tests for NumFuzz.fuzzy()", function() {
   expect(11);
 
@@ -16,7 +18,7 @@ test("Tests for NumFuzz.fuzzy()", function() {
   strictEqual(NumFuzz.fuzzy(1100000), "1.1M", "NumFuzz.fuzzy(1100000) returns '1.1M'");
   
   // Negative
-  strictEqual(NumFuzz.fuzzy(-1000), "-1k", "NumFuzz.fuzzy(-1000) returns -1k");
+  strictEqual(NumFuzz.fuzzy(-1000), "-1k", "NumFuzz.fuzzy(-1000) returns '-1k'");
 });
 
 test("Tests for NumFuzz.fuzzy() with invalid data", function() {
@@ -24,5 +26,5 @@ test("Tests for NumFuzz.fuzzy() with invalid data", function() {
   strictEqual(NumFuzz.fuzzy("1"), "1", "NumFuzz.fuzzy('1') returns '1'");
   strictEqual(NumFuzz.fuzzy(""), "NaN", "NumFuzz.fuzzy('') returns 'NaN'");
   strictEqual(NumFuzz.fuzzy(true), "NaN", "NumFuzz.fuzzy(true) returns 'NaN'");
-  strictEqual(NumFuzz.fuzzy(false), "NaN", "NumFuzz.fuzzy(fals) returns 'NaN'");
+  strictEqual(NumFuzz.fuzzy(false), "NaN", "NumFuzz.fuzzy(false) returns 'NaN'");
 });
