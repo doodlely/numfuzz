@@ -1,0 +1,23 @@
+{
+  "name": "numfuzz",
+  "version": "1.0.0",
+  "title": "NumFuzz.js",
+  "author": {
+    "name": "Ramon Torres",
+    "email": "raymondjavaxx@gmail.com",
+    "url": "http://rtorres.me/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/doodlely/numfuzz/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  },
+  "description": "Simple number abbreviation library and jQuery plugin",
+  "keywords": ["formatting", "numbers", "abbreviation"],
+  "homepage": "https://github.com/doodlely/numfuzz",
+  "bugs": "https://github.com/doodlely/numfuzz/issues"
+}
